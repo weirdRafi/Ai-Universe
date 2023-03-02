@@ -50,7 +50,23 @@ const displayAidetail = ai => {
     const leftDiv = document.createElement('div')
     leftDiv.innerHTML = `
     <h6>${ai.data.description}</h6>
-
+    <div class="row my-5">
+        <div class="col-md-4">${ai.data.pricing[0].price}</div>
+        <div class="col-md-4">${ai.data.pricing[1].price}</div>
+        <div class="col-md-4">${ai.data.pricing[2].price}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+        <h4>Features</h4>
+        <p>${ai.data.features}</p>
+        </div>
+        <div class="col-md-6">
+        <h4>Integrations</h4>
+        <p>${ai.data.integrations[0]}</p>
+        <p>${ai.data.integrations[1]}</p>
+        <p>${ai.data.integrations[2]}</p>
+        </div>
+    </div>
     `
     leftContainer.appendChild(leftDiv)
 
@@ -63,5 +79,4 @@ const displayAidetail = ai => {
     `
     rightContainer.appendChild(rightDiv)
 
-    
 }
