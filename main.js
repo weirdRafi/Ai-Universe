@@ -59,7 +59,9 @@ const displayAidetail = ai => {
     <div class="row">
         <div class="col-md-6">
         <h4>Features</h4>
-        <p>${ai.data.features.feature_name}</p>
+        <p>${ai.data.features["1"].feature_name}</p>
+        <p>${ai.data.features["2"].feature_name}</p>
+        <p>${ai.data.features["3"].feature_name}</p>
         </div>
         <div class="col-md-6">
         <h4>Integrations</h4>
@@ -77,6 +79,8 @@ const displayAidetail = ai => {
     const rightDiv = document.createElement('div');
     rightDiv.innerHTML=`
     <img class="img-fluid mt-5" src="${ai.data.image_link[0]}">
+    <h3>${ai.data.input_output_examples[0].input}</h3>
+    <p>${ai.data.input_output_examples[0].input}</p>
     `
     rightContainer.appendChild(rightDiv)
 
