@@ -25,9 +25,11 @@ const showAi = data =>{
                 <p class="card-text"><i class="fa-solid fa-calendar-days"></i> ${element.published_in}</p>
                 </div>
                 <div>
-                <i class="fa-solid fa-arrow-right-long"></i>
+                <i class="fa-solid fa-arrow-right-long" data-bs-toggle="modal" data-bs-target="#aiDetailModal"></i>
                 </div>
                 </div>
+
+                
                 
             </div>
         </div>
