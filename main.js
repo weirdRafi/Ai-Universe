@@ -8,7 +8,7 @@ const showAi = data =>{
     // console.log(data);
     const dataContainer = document.getElementById('container');
     data.slice(1, 7).forEach(element => {
-        console.log(element);
+        // console.log(element);
         const div = document.createElement('div');
         div.innerHTML =`
         <div class="card" style="width: 16rem;">
@@ -25,15 +25,43 @@ const showAi = data =>{
                 <p class="card-text"><i class="fa-solid fa-calendar-days"></i> ${element.published_in}</p>
                 </div>
                 <div>
-                <i class="fa-solid fa-arrow-right-long" data-bs-toggle="modal" data-bs-target="#aiDetailModal"></i>
+                <i onclick="loadAidetail('${element.id}')" class="fa-solid fa-arrow-right-long" data-bs-toggle="modal" data-bs-target="#aiDetailModal"></i>
                 </div>
                 </div>
 
-                
-                
             </div>
         </div>
         `
         dataContainer.appendChild(div)
     });
+}
+
+const loadAidetail = id => {
+    const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayAidetail(data))
+}
+
+const displayAidetail = ai => {
+    console.log(ai);
+    const leftContainer = document.getElementById('left-container');
+    leftContainer.innerHTML = '';
+    const leftDiv = document.createElement('div')
+    leftDiv.innerHTML = `
+    <h6>${ai.data.description}</h6>
+
+    `
+    leftContainer.appendChild(leftDiv)
+
+
+    const rightContainer = document.getElementById('right-container')
+    rightContainer.innerHTML='';
+    const rightDiv = document.createElement('div');
+    rightDiv.innerHTML=`
+    <img class="img-fluid mt-5" src="${ai.data.image_link[0]}">
+    `
+    rightContainer.appendChild(rightDiv)
+
+    
 }
