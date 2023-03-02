@@ -7,6 +7,7 @@ const loadAi = () => {
 const showAi = data =>{
     // console.log(data);
     const dataContainer = document.getElementById('container');
+    
     data.slice(1, 7).forEach(element => {
         // console.log(element);
         const div = document.createElement('div');
@@ -58,7 +59,7 @@ const displayAidetail = ai => {
     <div class="row">
         <div class="col-md-6">
         <h4>Features</h4>
-        <p>${ai.data.features}</p>
+        <p>${ai.data.features.feature_name}</p>
         </div>
         <div class="col-md-6">
         <h4>Integrations</h4>
