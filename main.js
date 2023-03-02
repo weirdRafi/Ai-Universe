@@ -52,9 +52,9 @@ const displayAidetail = ai => {
     leftDiv.innerHTML = `
     <h6>${ai.data.description}</h6>
     <div class="row my-5">
-        <div class="col-md-4">${ai.data.pricing[0].price}</div>
-        <div class="col-md-4">${ai.data.pricing[1].price}</div>
-        <div class="col-md-4">${ai.data.pricing[2].price}</div>
+        <div class="col-md-4 text-success">${ai.data.pricing[0].price}</div>
+        <div class="col-md-4 text-warning">${ai.data.pricing[1].price}</div>
+        <div class="col-md-4 text-danger">${ai.data.pricing[2].price}</div>
     </div>
     <div class="row">
         <div class="col-md-6">
@@ -79,8 +79,8 @@ const displayAidetail = ai => {
     const rightDiv = document.createElement('div');
     rightDiv.innerHTML=`
     <img class="img-fluid mt-5" src="${ai.data.image_link[0]}">
-    <h3>${ai.data.input_output_examples[0].input}</h3>
-    <p>${ai.data.input_output_examples[0].input}</p>
+    <h3 class="text-center mt-5">${ai.data.input_output_examples[0].input}</h3>
+    <p class="text-center">${ai.data.input_output_examples[0].output}</p>
     `
     rightContainer.appendChild(rightDiv)
 
